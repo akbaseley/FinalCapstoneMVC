@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<br /><br />
+<form action="/Home/ListAllCars" method="get">
+    <input type="submit" value="Get a list of all cars" />
+</form>
+<br />
+
+
+
+<select name="model" form="CarsByProperties">
+    @for (int i = 0; i < ViewBag.CarModels.Count; i++)
+    {
+        <option value="@ViewBag.CarModels[i]">@ViewBag.CarModels[i]</option>
+    }
+</select>
+
+<select name="color" form="CarsByProperties">
+    @for (int i = 0; i < ViewBag.CarColors.Count; i++)
+    {
+        <option value="@ViewBag.CarColors[i]">@ViewBag.CarColors[i]</option>
+    }
+</select>
+
+<select name="year" form="CarsByProperties">
+    @for (int i = 0; i < ViewBag.CarYears.Count; i++)
+    {
+        <option value="@ViewBag.CarYears[i]">@ViewBag.CarYears[i]</option>
+    }
+</select>
+
+<form action="/Home/GetCarsByMake" method="get" id="CarsByProperties">
+    <select name="make" form="CarsByProperties">
+        @for (int i = 0; i < ViewBag.CarMakes.Count; i++)
+        {
+            <option value="@ViewBag.CarMakes[i]">@ViewBag.CarMakes[i]</option>
+        }
+    </select>
+    <input type="submit" value="Search by Make" />
+</form>
+
+<form action="/Home/ListCarsByMakeandModel" method="get" id="CarsByProperties">
+    <input type="submit" value="Find your car by Make and Model!" />
+</form>
+

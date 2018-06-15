@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "ListofCars";
+}
+
+
+<h2>Car List</h2>
+<table class="table">
+    <tr>
+        <th>
+            Make
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Color
+        </th>
+        <th>
+            Year
+        </th>
+    </tr>
+    @for (int i = 0; i < ViewBag.Cars["cars"].Count; i++)
+    {
+        <tr>
+            <td>
+                @ViewBag.Cars["cars"][i]["Make"]
+            </td>
+            <td>
+                @ViewBag.Cars["cars"][i]["Model"]
+            </td>
+            <td>
+                @ViewBag.Cars["cars"][i]["Color"]
+            </td>
+            <td>
+                @ViewBag.Cars["cars"][i]["Year"]
+            </td>
+        </tr>
+    }
+</table>
+
